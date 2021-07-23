@@ -1,0 +1,6 @@
+out/
+bin/
+tmp/
+node_modules/
+
+*.tar.gz
