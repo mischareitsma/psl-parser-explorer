@@ -4,10 +4,10 @@
   "description": "PSL Parser exploration tool",
   "main": "out/index.js",
   "scripts": {
+    "clean": "rm -rf out/",
     "compile": "tsc -p .",
-    "copy-statics": "npm run copy-views",
-    "copy-views": "mkdir -p out/views && cp src/views/* out/views",
-    "dev": "npm run compile && npm run copy-statics && npm run webpage",
+    "copy-statics": "cp -r src/{static,views} out/",
+    "dev": "npm run clean && npm run compile && npm run copy-statics && npm run webpage",
     "webpage": "node ./out/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

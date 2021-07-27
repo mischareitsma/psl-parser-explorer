@@ -1,0 +1,62 @@
+	#PACKAGE custom
+	#CLASSDEF extends = Reference public
+
+	// --------------------------------------------------------------------
+	#PROPERTYDEF counter = 0 class = Integer public readonly position = 1
+	/* DOC ----------------------------------------------------------------
+	Some counter.
+	** ENDDOC */
+
+
+	// --------------------------------------------------------------------
+public static Integer pslmain(void args(String))
+	/* DOC ----------------------------------------------------------------
+	Command line entry point.
+
+	@param	args	Command line arguments
+	** ENDDOC */
+	
+	do {
+		catch err {
+			write "Error: "_ err.toString(),!
+		}
+
+		type Example example = Class.new("Example")
+		do example.incrementCounter(4)
+		do example.something()
+		write "My counter is now: "_ example.counter,!
+
+	}
+
+	return 0
+
+
+	// --------------------------------------------------------------------
+public void incrementCounter(Integer nTimes)
+	/* DOC ----------------------------------------------------------------
+	Increment the counter.
+
+	@param	nTimes	The amount of times to increment the counter.
+	** ENDDOC */
+
+	if nTimes.get().isNull() set nTimes = 1
+
+	// Just for parsing tests, this.counter+=nTimes would be better :-)
+	type Integer i
+	for i = 1:1:nTimes {
+		set this.counter = this.counter + 1
+	}
+
+	quit
+
+
+	// --------------------------------------------------------------------
+public void something()
+	/* DOC ----------------------------------------------------------------
+	This does something.
+	** ENDDOC */
+
+	write "I am doing something, like incrementing the counter three times",!
+	do this.incrementCounter(3)
+
+	quit

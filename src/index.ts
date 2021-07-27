@@ -7,6 +7,8 @@ const port: String = process.env.EXPRESS_PORT || '3000';
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(express.static(path.join(__dirname, 'static')))
+
 app.get('/', (req: express.Request, res: express.Response) => {
 	res.render('index', {title: 'PSL Tokenizer, Parser and Linter Test'});
 });
