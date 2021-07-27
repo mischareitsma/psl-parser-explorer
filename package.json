@@ -5,6 +5,9 @@
   "main": "out/index.js",
   "scripts": {
     "compile": "tsc -p .",
+    "copy-statics": "npm run copy-views",
+    "copy-views": "mkdir -p out/views && cp src/views/* out/views",
+    "dev": "npm run compile && npm run copy-statics && npm run webpage",
     "webpage": "node ./out/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
