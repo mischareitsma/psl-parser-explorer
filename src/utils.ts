@@ -10,7 +10,7 @@ let examplePsl: string = '';
 function _loadExample() {
 	if (examplePsl !== '') return;
 
-	examplePsl = fs.readFileSync(path.join('static', 'Example.psl')).toString('utf-8');
+	examplePsl = fs.readFileSync(path.join(__dirname, 'static', 'Example.psl')).toString('utf-8');
 }
 
 export function getExample(): string {
@@ -20,5 +20,6 @@ export function getExample(): string {
 }
 
 export function parsePsl(psl: string): string {
+	console.log(`psl:\n${psl}`)
 	return JSON.stringify(pslParser.parseText(psl), null, 4);
 }
