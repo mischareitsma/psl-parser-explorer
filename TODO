@@ -1,0 +1,15 @@
+Webpage related:
+	Front end:
+		[X] Create button to load example
+		[ ] Create button to parse
+		[ ] Create button to load from file
+	Back end:
+		[X] Add an example to static
+		[ ] Create endpoint to load example
+		[ ] Create endpoint to load file
+
+Parser related:
+	[ ] Create function to use the psl-parser to get parsed content.
+
+TODO / FIXME / BUG / Ideas:
+	[ ] Should we parse when after 500ms of inactivity in the textArea? And only show parsed results if no errors?

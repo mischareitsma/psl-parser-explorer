@@ -7,8 +7,8 @@
     "clean": "rm -rf out/",
     "compile": "tsc -p .",
     "copy-statics": "cp -r src/{static,views} out/",
-    "dev": "npm run clean && npm run compile && npm run copy-statics && npm run webpage",
-    "webpage": "node ./out/index.js",
+    "dev": "npm run clean && npm run compile && npm run copy-statics && npm run web",
+    "web": "node ./out/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
