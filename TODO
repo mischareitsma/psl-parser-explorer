@@ -1,12 +1,14 @@
 Webpage related:
 	Front end:
 		[X] Create button to load example
-		[ ] Create button to parse
+		[X] Create button to parse
 		[ ] Create button to load from file
 	Back end:
 		[X] Add an example to static
-		[ ] Create endpoint to load example
+		[X] Create endpoint to load example
+		[X] Create function that loads example
 		[ ] Create endpoint to load file
+		[ ] Add the `window.onload()` stuff, check other project
 
 Parser related:
 	[ ] Create function to use the psl-parser to get parsed content.
