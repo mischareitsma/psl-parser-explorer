@@ -1,6 +1,5 @@
 import * as express from 'express';
 import * as path from 'path';
-import * as bodyParser from 'body-parser'
 
 import { getExample, parsePsl } from './utils';
 
@@ -13,7 +12,7 @@ app.set('view engine', 'pug');
 // Scripts that are imported are in the root
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'static')))
-// app.use(bodyParser.raw);
+app.use(express.json());
 
 app.get('/', (req: express.Request, res: express.Response) => {
 	res.render('index', {title: 'PSL Tokenizer, Parser and Linter Test'});
@@ -24,8 +23,9 @@ app.get('/example', (req: express.Request, res: express.Response) => {
 });
 
 app.post('/parse', (req: express.Request, res: express.Response) => {
-	console.log('in parse');
-	res.send(parsePsl(req.body));
+	const parsedText: string = parsePsl(req.body.pslText)
+	// console.log(parsedText);
+	res.send(parsedText);
 });
 
 app.listen(port, () => {

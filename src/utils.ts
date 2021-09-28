@@ -20,6 +20,5 @@ export function getExample(): string {
 }
 
 export function parsePsl(psl: string): string {
-	console.log(`psl:\n${psl}`)
 	return JSON.stringify(pslParser.parseText(psl), null, 4);
 }

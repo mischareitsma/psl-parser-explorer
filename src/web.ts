@@ -16,13 +16,20 @@ async function loadExampleClick() {
 }
 
 async function parsePslClick() {
-	if (!pslInput) return "{}";
-	if (pslInput.value.length === 0) return "{}";
+	if (!pslInput || pslInput.value.length === 0) {
+		parsedOutput.innerHTML = "{}";
+		return;
+	}
 	// TODO: psl-parser has fs stuff, so even webpack etc. won't solve our problems without
 	// removing that. Therefore, just a fetch again.
-	console.log(`Body for POST fetch: ${pslInput.value}`);
+	// TODO: Fetch is using application/json wrapper, because of the body-parser. Would be nice
+	// to just use raw code as bytes though.
 	const pslParsedJson: Response = await fetch("/parse",
-		{method: "POST", body: pslInput.value});
+		{
+			method: "POST",
+			body: JSON.stringify({'pslText': pslInput.value}),
+			headers: {"Content-Type": "application/json"},
+		});
 	parsedOutput.innerHTML = (await pslParsedJson.text()).replace(/\n/g, "<br>").replace(/[ ]/g, "&nbsp;");
 }
 
@@ -33,8 +40,8 @@ function onWindowLoadFunc() {
 	parseCodeButton = <HTMLButtonElement>document.getElementById("parseCode");
 	loadExampleButton = <HTMLButtonElement>document.getElementById("loadExample");
 
-	loadExampleButton.addEventListener('click', loadExampleClick);
-	parseCodeButton.addEventListener('click', parsePslClick);
+	loadExampleButton.addEventListener("click", loadExampleClick);
+	parseCodeButton.addEventListener("click", parsePslClick);
 
 	// TODO: Should we parse immediately? One way of getting the initial {}, but also if things
 	// are still loaded, would then update / init properly
