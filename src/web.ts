@@ -45,7 +45,7 @@ function onWindowLoadFunc() {
 
 	// TODO: Should we parse immediately? One way of getting the initial {}, but also if things
 	// are still loaded, would then update / init properly
-	parsePslClick();
+	// parsePslClick();
 
 	// TODO: could add an 'input' event listener on pslInput
 }

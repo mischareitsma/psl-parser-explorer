@@ -1,6 +1,7 @@
 Webpage related:
 	Front end:
 		[ ] Create button to load from file
+		[ ] Make JSON collapsable, check for example https://jsonformatter.curiousconcept.com/#
 		[X] Create button to load example
 		[X] Create button to parse
 	Back end:
@@ -12,7 +13,7 @@ Webpage related:
 		[X] Add the `window.onload()` stuff, check other project
 
 Parser related:
-	[ ] Create function to use the psl-parser to get parsed content.
+	[X] Create function to use the psl-parser to get parsed content.
 
 TODO / FIXME / BUG / Ideas:
 	[ ] Should we parse when after 500ms of inactivity in the textArea? And only show parsed results if no errors?
