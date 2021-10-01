@@ -1,6 +1,7 @@
 /**
  * Module with web related utilities, need to be able to run in the browser, so no fs stuff etc.
  */
+import * as jsonview from './jsonview';
 
 let pslInput: HTMLTextAreaElement = null;
 let parsedOutput: HTMLParagraphElement = null;
@@ -30,7 +31,8 @@ async function parsePslClick() {
 			body: JSON.stringify({'pslText': pslInput.value}),
 			headers: {"Content-Type": "application/json"},
 		});
-	parsedOutput.innerHTML = (await pslParsedJson.text()).replace(/\n/g, "<br>").replace(/[ ]/g, "&nbsp;");
+	jsonview.renderJSON((await pslParsedJson.text()), parsedOutput);
+	// parsedOutput.innerHTML = .replace(/\n/g, "<br>").replace(/[ ]/g, "&nbsp;");
 }
 
 function onWindowLoadFunc() {

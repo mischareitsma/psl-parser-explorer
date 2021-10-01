@@ -1,7 +1,7 @@
 Webpage related:
 	Front end:
 		[ ] Create button to load from file
-		[ ] Make JSON collapsable, check for example https://jsonformatter.curiousconcept.com/#
+		[ ] Make JSON collapsable, check for example https://jsonformatter.curiousconcept.com/# => http://pgrabovets.github.io/json-view/ seems a bit better tbh, easier to use. => https://www.npmjs.com/package/react-json-view even better??
 		[X] Create button to load example
 		[X] Create button to parse
 	Back end:
@@ -11,6 +11,8 @@ Webpage related:
 		[X] Create endpoint to load example
 		[X] Create function that loads example
 		[X] Add the `window.onload()` stuff, check other project
+
+	[ ] Rewrite using React, easier to use react-json-view then?
 
 Parser related:
 	[X] Create function to use the psl-parser to get parsed content.
